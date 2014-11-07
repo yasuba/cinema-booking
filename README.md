@@ -13,6 +13,7 @@ rejected.
 yield 11 rejected requests.
 
 >The text file of bookings contains one booking per line, where a booking is of the following form:
-    &lt;id>,&lt;index of first seat row>:&lt;index of first seat within row>,&lt;index of last seat row>:&lt;index of last seat within row>,
+
+>&lt;id>,&lt;index of first seat row>:&lt;index of first seat within row>,&lt;index of last seat row>:&lt;index of last seat within row>,
 
 >Rows and seats are both 0-indexed. Note the trailing comma is absent on the final line.
