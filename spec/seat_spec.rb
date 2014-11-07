@@ -14,3 +14,5 @@ describe Seat do
   end
 
 end
+
+# https://s3.amazonaws.com/uploads.hipchat.com/119067/1032565/OAjtKu7JNdJotNH/sample_booking_requests
