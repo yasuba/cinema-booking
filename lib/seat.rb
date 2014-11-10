@@ -10,7 +10,7 @@ class Seat
 
   def book!
     @available = false
+    return self
   end
-
 
 end

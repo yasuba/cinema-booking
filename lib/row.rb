@@ -2,15 +2,10 @@ require './lib/seat'
 
 class Row
 
-  def initialize
-    @seats = []
-    create_seats
-  end
+  attr_accessor :seats, :available_seats
 
-  def create_seats
-    for i in (1..50) do
-      @seats << Seat.new
-    end
+  def initialize
+    @seats = Array.new(50) {|i| i = Seat.new}
   end
 
   def has_seats?
@@ -21,5 +16,11 @@ class Row
     @seats.count
   end
 
+  def book_seats(seat)
+    seat.book!
+    # @unavailable_seats = []
+    # @unavailable_seats << seat.book!
+    @available_seats = @seats.reject! { |s| !s.available? }.count
+  end
 
 end
