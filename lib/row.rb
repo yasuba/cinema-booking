@@ -18,12 +18,10 @@ class Row
   end
 
   def book_seats(*args)
-    p args.count
-    while args.count < 6
-      args.each do |seat|
-        seat.available? ? seat.book! : raise {'That seat has already been booked'}
-      end
-    # p "You can't book more than five seats in one booking"
+    if args.count <= 5
+      args.each { |seat| seat.available? ? seat.book! : raise {'That seat has already been booked'} }
+    else
+      raise "You can't book more than five seats in one booking"
     end
   end
 

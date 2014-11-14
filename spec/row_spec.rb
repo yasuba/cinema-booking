@@ -27,8 +27,7 @@ describe Row do
   end
 
   it 'does not allow more than five seats to be booked at once' do
-    row.book_seats(seat1, seat2, seat3, seat4, seat5, seat6)
-    expect(row.available_seats).to eq (45)
+    expect{row.book_seats(seat1, seat2, seat3, seat4, seat5, seat6)}.to raise_error
   end
 
 end
