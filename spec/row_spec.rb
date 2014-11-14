@@ -18,8 +18,4 @@ describe Row do
     expect{row.book_seats(seat1, seat3)}.to raise_error
   end
 
-  it 'does not allow more than five seats to be booked at once' do
-    expect{row.book_seats(seat1, seat2, seat3, seat4, seat5, seat6)}.to raise_error
-  end
-
 end

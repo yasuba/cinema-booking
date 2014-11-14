@@ -8,8 +8,8 @@ class Cinema
     @rows = Array.new(100) {|i| i = Row.new}
   end
 
-  def book_seats(row_number, seat_number)
-    rows[row_number].seats[seat_number].book!
+  def book_seats(row_number, first_seat, last_seat)
+    rows[row_number].seats[first_seat..last_seat].each {|seat| seat.book!}
   end
 
 end
