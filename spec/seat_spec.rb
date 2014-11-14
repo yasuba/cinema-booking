@@ -13,6 +13,11 @@ describe Seat do
     expect(seat).to_not be_available
   end
 
+  it 'can not be booked if unavailable' do
+    seat.book!
+    expect{seat.book!}.to raise_error
+  end
+
 end
 
 # https://s3.amazonaws.com/uploads.hipchat.com/119067/1032565/OAjtKu7JNdJotNH/sample_booking_requests

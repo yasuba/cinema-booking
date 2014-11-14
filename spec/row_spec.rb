@@ -1,5 +1,4 @@
 require 'row'
-require 'seat'
 
 describe Row do
 
@@ -15,15 +14,8 @@ describe Row do
     expect(row.seats.count).to eq (50)
   end
 
-  it 'allows available seats to be booked' do
-    row.book_seats(seat1)
-    expect(seat1).to_not be_available
-    expect(row.available_seats).to eq (49)
-  end
-
-  it 'does not allow an unavailable seat to be booked' do
-    booked_seat = row.seats[6].book!
-    expect{row.book_seats(booked_seat)}.to raise_error
+  xit 'only allows adjacent seats to be booked' do
+    expect{row.book_seats(seat1, seat3)}.to raise_error
   end
 
   it 'does not allow more than five seats to be booked at once' do

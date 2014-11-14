@@ -9,8 +9,12 @@ class Seat
   end
 
   def book!
-    @available = false
-    return self
+    if @available == false
+      raise 'This seat is already taken'
+    else
+      @available = false
+      return self
+    end
   end
 
 end
