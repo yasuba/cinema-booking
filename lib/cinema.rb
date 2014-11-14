@@ -9,7 +9,15 @@ class Cinema
   end
 
   def book_seats(row_number, first_seat, last_seat)
-    rows[row_number].seats[first_seat..last_seat].each {|seat| seat.book!}
+    booking = rows[row_number].seats[first_seat..last_seat]
+    if booking.length <= 5
+      booking.each {|seat| seat.book!}
+    else
+      raise "You can't book more than five seats"
+    end
   end
 
 end
+
+
+

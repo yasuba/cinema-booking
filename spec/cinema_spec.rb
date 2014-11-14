@@ -22,8 +22,19 @@ describe Cinema do
     expect(cinema.rows[0].seats[4]).to_not be_available
   end
 
-  # xit 'does not allow more than five seats to be booked at once' do
-  #   expect{row.book_seats(0:0, 0:1, 0:2, 0:3, 0:4}.to raise_error
-  # end
+  it 'does not allow more than five seats to be booked at once' do
+    expect{cinema.book_seats(0,0,5)}.to raise_error
+  end
+
+  xit 'does not allow a single-seat gap between bookings' do
+    cinema.book_seats(0,1,2)
+    expect{cinema.book_seats(0,4,5)}.to raise_error
+  end
+
+  xit 'only accepts booking for seats in the same row' do
+    cinema.book_seats(0,)
+  end
 
 end
+
+# booking format: (0, 1:12, 1:14)
