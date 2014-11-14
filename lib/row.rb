@@ -9,10 +9,6 @@ class Row
     @seats = Array.new(50) {|i| i = Seat.new}
   end
 
-  def seat_count
-    @seats.count
-  end
-
   def available_seats
      @available_seats = @seats.reject { |s| !s.available? }.count
   end

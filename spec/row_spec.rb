@@ -12,7 +12,7 @@ describe Row do
   let(:seat6) {row.seats[5]}
 
   it 'should have 50 seats when initialized' do
-    expect(row.seat_count).to eq (50)
+    expect(row.seats.count).to eq (50)
   end
 
   it 'allows available seats to be booked' do
